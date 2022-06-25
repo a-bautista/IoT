@@ -1,6 +1,7 @@
 from basicClient import BasicPikaClient
 from dotenv import load_dotenv
 import os
+import time
 
 class BasicMessageReceiver(BasicPikaClient):
 
@@ -35,8 +36,13 @@ if __name__ == "__main__":
         REGION
     )
 
-    # Consume the message that was sent.
-    basic_message_receiver.get_message("iot_eq_48")
-
-    # Close connections.
-    basic_message_receiver.close()
+    while True:
+        try:
+            # keep the queue waiting for 2 seconds
+            time.sleep(2)
+            # Consume the message that was sent.
+            basic_message_receiver.get_message("iot_eq_48")
+        except KeyboardInterrupt:
+            # Close connections.
+            print("Closing connection")
+            basic_message_receiver.close()

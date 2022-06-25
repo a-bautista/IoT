@@ -36,7 +36,7 @@ while Connected != True:
     time.sleep(0.1)
     client1.subscribe(tag)
     try:
-        while  True:
+        while True:
             time.sleep(1)
     except KeyboardInterrupt:
         print("Envio de datos detenido por el usuario")

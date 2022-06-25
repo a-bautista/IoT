@@ -1,4 +1,4 @@
-import pika, os
+import pika
 
 # class MyCallback():
 #     def callback(self, ch, method, properties, body):

@@ -41,8 +41,10 @@ if __name__ == "__main__":
     # Declare a queue
     basic_message_sender.declare_queue("iot_eq_48")
 
+    # define your message
+    message = input("Type in your message: ")
     # Send a message to the queue.
-    basic_message_sender.send_message(exchange="", routing_key="iot_eq_48", body=b'Sending: My 4 message in AMQP!')
+    basic_message_sender.send_message(exchange="", routing_key="iot_eq_48", body=message)
 
     # Close connections.
     basic_message_sender.close()
