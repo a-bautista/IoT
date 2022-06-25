@@ -26,7 +26,7 @@ if __name__ == "__main__":
     # and channel for sending messages.
     load_dotenv()
     BROKER_ID = os.getenv("BROKER_ID")
-    USERNAME = os.getenv("USERNAME")
+    USERNAME = os.getenv("USER_AWS")
     PASSWORD = os.getenv("PASSWORD")
     REGION = os.getenv("REGION")
 
